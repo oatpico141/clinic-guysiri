@@ -33,6 +33,21 @@ Route::get('/', function () {
     return redirect('/login');
 });
 
+// Setup route for initial database seeding (one-time use)
+Route::get('/setup-database-seed-now', function () {
+    // Check if already seeded
+    if (\App\Models\User::count() > 0) {
+        return 'Database already has data. No seeding needed.';
+    }
+
+    try {
+        \Artisan::call('db:seed', ['--force' => true]);
+        return 'Database seeded successfully! You can now login. <a href="/login">Go to Login</a>';
+    } catch (\Exception $e) {
+        return 'Error: ' . $e->getMessage();
+    }
+});
+
 // ========================================
 // Public Routes (No Auth Required)
 // ========================================
