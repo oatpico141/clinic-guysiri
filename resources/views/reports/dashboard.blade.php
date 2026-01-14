@@ -100,7 +100,7 @@
             <h4 class="mb-1"><i class="bi bi-speedometer2 me-2"></i>Dashboard</h4>
             <p class="mb-0 opacity-75">ภาพรวมการดำเนินงาน</p>
         </div>
-        <a href="{{ route('reports.index') }}" class="btn btn-light">
+        <a href="{{ route('reports.pnl') }}" class="btn btn-light">
             <i class="bi bi-bar-chart-line me-1"></i>รายงานทั้งหมด
         </a>
     </div>

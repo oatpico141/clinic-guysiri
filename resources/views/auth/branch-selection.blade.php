@@ -163,7 +163,7 @@
         <p class="instruction">กรุณาเลือกสาขาที่ต้องการเข้าใช้งาน</p>
 
         @if($branches->count() > 0)
-        <form method="POST" action="{{ route('branch.select.submit') }}" id="branchForm">
+        <form method="POST" action="{{ route('branch.switch') }}" id="branchForm">
             @csrf
 
             <div class="branch-grid">

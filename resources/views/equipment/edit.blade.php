@@ -38,7 +38,7 @@
 
     <!-- Form -->
     <div class="form-card">
-        <form method="POST" action="{{ route('equipment.update.temp', $equipment) }}" id="equipmentForm">
+        <form method="POST" action="{{ route('equipment.update', $equipment) }}" id="equipmentForm">
             @csrf
             @method('PUT')
 
@@ -175,7 +175,7 @@ document.getElementById('equipmentForm').addEventListener('submit', function(e) 
 
 function deleteEquipment() {
     if (confirm('ยืนยันการลบอุปกรณ์นี้?')) {
-        fetch('{{ route('equipment.destroy.temp', $equipment) }}', {
+        fetch('{{ route('equipment.destroy', $equipment) }}', {
             method: 'DELETE',
             headers: {
                 'X-CSRF-TOKEN': '{{ csrf_token() }}',

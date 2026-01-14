@@ -58,7 +58,7 @@
                     {{ $user->role->name ?? '-' }} | {{ $user->branch->name ?? '-' }}
                 </p>
             </div>
-            <a href="{{ route('commission-rates.index.temp') }}" class="btn btn-light btn-sm">
+            <a href="{{ route('commission-rates.index') }}" class="btn btn-light btn-sm">
                 <i class="bi bi-arrow-left me-1"></i>กลับ
             </a>
         </div>

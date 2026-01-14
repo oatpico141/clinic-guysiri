@@ -60,7 +60,7 @@
             <button class="btn btn-light me-2" id="autoGenerateBtn">
                 <i class="bi bi-arrow-repeat me-1"></i>สร้างรายการอัตโนมัติ
             </button>
-            <a href="{{ route('crm.follow-up') }}" class="btn btn-outline-light">
+            <a href="{{ route('crm.index') }}" class="btn btn-outline-light">
                 <i class="bi bi-calendar-event me-1"></i>CRM Follow-up
             </a>
         </div>

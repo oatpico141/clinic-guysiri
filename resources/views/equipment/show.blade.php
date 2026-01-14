@@ -53,7 +53,7 @@
                 <p class="mb-0 opacity-90">รหัส: {{ $equipment->equipment_code }}</p>
             </div>
             <div>
-                <a href="{{ route('equipment.edit.temp', $equipment) }}" class="btn btn-light me-2">
+                <a href="{{ route('equipment.edit', $equipment) }}" class="btn btn-light me-2">
                     <i class="bi bi-pencil me-1"></i> แก้ไข
                 </a>
                 <a href="{{ route('equipment.index') }}" class="btn btn-outline-light">
@@ -245,7 +245,7 @@
                 <h5 class="modal-title"><i class="bi bi-wrench me-2"></i>บันทึกการซ่อมบำรุง</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
-            <form id="maintenanceForm" method="POST" action="{{ route('equipment.maintenance.temp', $equipment) }}">
+            <form id="maintenanceForm" method="POST" action="{{ route('equipment.maintenance', $equipment) }}">
                 @csrf
                 <div class="modal-body">
                     <div class="mb-3">

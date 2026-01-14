@@ -152,7 +152,7 @@
     <div class="alert alert-warning alert-dismissible fade show mb-4" role="alert">
         <i class="bi bi-wrench me-2"></i>
         <strong>แจ้งเตือน!</strong> มีอุปกรณ์ {{ $maintenanceDue }} รายการถึงกำหนดซ่อมบำรุงใน 7 วัน
-        <a href="{{ route('equipment.index.temp', ['maintenance_due' => 1]) }}" class="alert-link">ดูรายการ</a>
+        <a href="{{ route('equipment.index', ['maintenance_due' => 1]) }}" class="alert-link">ดูรายการ</a>
         <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
     </div>
     @endif
@@ -256,10 +256,10 @@
                             @endif
                         </td>
                         <td class="text-center">
-                            <a href="{{ route('equipment.show.temp', $item) }}" class="btn btn-sm btn-outline-info me-1" title="ดูรายละเอียด">
+                            <a href="{{ route('equipment.show', $item) }}" class="btn btn-sm btn-outline-info me-1" title="ดูรายละเอียด">
                                 <i class="bi bi-eye"></i>
                             </a>
-                            <a href="{{ route('equipment.edit.temp', $item) }}" class="btn btn-sm btn-outline-secondary" title="แก้ไข">
+                            <a href="{{ route('equipment.edit', $item) }}" class="btn btn-sm btn-outline-secondary" title="แก้ไข">
                                 <i class="bi bi-pencil"></i>
                             </a>
                         </td>

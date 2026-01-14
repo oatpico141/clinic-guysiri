@@ -12,8 +12,13 @@ class ExampleTest extends TestCase
      */
     public function test_the_application_returns_a_successful_response(): void
     {
+        // Root redirects to /login, so we expect 302
         $response = $this->get('/');
+        $response->assertStatus(302);
+        $response->assertRedirect('/login');
 
+        // Login page should return 200
+        $response = $this->get('/login');
         $response->assertStatus(200);
     }
 }

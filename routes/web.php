@@ -219,6 +219,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/crm/refresh', [\App\Http\Controllers\CrmController::class, 'refreshCalls'])->name('crm.refresh');
 
     Route::resource('follow-up-lists', FollowUpListController::class);
+    Route::post('/follow-up-lists/auto-generate', [FollowUpListController::class, 'autoGenerate'])->name('follow-up-lists.auto-generate');
 
     // ========================================
     // Expenses
