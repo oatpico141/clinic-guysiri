@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(\"c:/laragon/bin/mysql/mysql-8.0.30-winx64/bin/mysql.exe\":*)",
+      "Bash(findstr:*)",
+      "Bash(more:*)",
+      "Bash(dir \"c:\\\\laragon\\\\www\\\\new\\\\cng\\\\public\\\\update-commission-data.php\")",
+      "Bash(cmd /c \"C:\\\\laragon\\\\bin\\\\php\\\\php-8.3.7-Win32-vs16-x64\\\\php.exe c:\\\\laragon\\\\www\\\\new\\\\cng\\\\public\\\\update-commission-data.php\")",
+      "Bash(\"/c/laragon/bin/php/php-8.2.26-Win32-vs16-x64/php.exe\":*)"
+    ]
+  }
+}

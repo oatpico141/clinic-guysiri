@@ -89,6 +89,8 @@ Route::middleware('auth')->group(function () {
 
     // OPD Records
     Route::resource('opd-records', OpdRecordController::class);
+    Route::post('/opd-records/{id}/close', [OpdRecordController::class, 'close'])->name('opd-records.close');
+    Route::post('/opd-records/{id}/reopen', [OpdRecordController::class, 'reopen'])->name('opd-records.reopen');
 
     // ========================================
     // Appointments & Queue
@@ -147,6 +149,7 @@ Route::middleware('auth')->group(function () {
 
     // Documents
     Route::resource('documents', DocumentController::class);
+    Route::get('/documents/{id}/download', [DocumentController::class, 'download'])->name('documents.download');
 
     // ========================================
     // Course Management
@@ -191,7 +194,15 @@ Route::middleware('auth')->group(function () {
     Route::delete('/commission-rates/{commission_rate}', [CommissionRateController::class, 'destroy'])->name('commission-rates.destroy')->where('commission_rate', '[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}');
 
     Route::resource('commissions', CommissionController::class);
+    Route::post('/commissions/{id}/pay', [CommissionController::class, 'markAsPaid'])->name('commissions.pay');
+    Route::post('/commissions/bulk-pay', [CommissionController::class, 'bulkPay'])->name('commissions.bulkPay');
+    Route::post('/commissions/{id}/clawback', [CommissionController::class, 'clawback'])->name('commissions.clawback');
+    Route::get('/api/commissions/pt-summary', [CommissionController::class, 'ptSummary'])->name('api.commissions.ptSummary');
+
     Route::resource('df-payments', DfPaymentController::class);
+    Route::post('/df-payments/{id}/pay', [DfPaymentController::class, 'markAsPaid'])->name('df-payments.pay');
+    Route::post('/df-payments/bulk-pay', [DfPaymentController::class, 'bulkPay'])->name('df-payments.bulkPay');
+
     Route::resource('commission-splits', CommissionSplitController::class);
 
     // ========================================
@@ -213,6 +224,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/stock/transactions', [\App\Http\Controllers\StockController::class, 'transactions'])->name('stock.transactions');
 
     Route::resource('stock-items', StockItemController::class);
+    Route::post('/stock-items/{id}/adjust', [StockItemController::class, 'adjust'])->name('stock-items.adjust');
     Route::resource('stock-transactions', StockTransactionController::class);
 
     Route::get('/equipment', [EquipmentController::class, 'index'])->name('equipment.index');
@@ -248,11 +260,22 @@ Route::middleware('auth')->group(function () {
     // Staff & HR
     // ========================================
     Route::resource('staff', StaffController::class);
+
     Route::resource('schedules', ScheduleController::class);
+    Route::post('/schedules/quick-store', [ScheduleController::class, 'quickStore'])->name('schedules.quickStore');
+    Route::get('/api/schedules/calendar', [ScheduleController::class, 'calendarEvents'])->name('api.schedules.calendar');
+
     Route::resource('leave-requests', LeaveRequestController::class);
+    Route::post('/leave-requests/{id}/approve', [LeaveRequestController::class, 'approve'])->name('leave-requests.approve');
+    Route::post('/leave-requests/{id}/reject', [LeaveRequestController::class, 'reject'])->name('leave-requests.reject');
+    Route::get('/api/leave-requests/staff/{staffId}/summary', [LeaveRequestController::class, 'staffSummary'])->name('api.leave-requests.staffSummary');
     Route::resource('evaluations', EvaluationController::class);
+    Route::post('/evaluations/{id}/complete', [EvaluationController::class, 'complete'])->name('evaluations.complete');
+
     Route::resource('pt-replacements', PtReplacementController::class);
     Route::resource('pt-requests', PtRequestController::class);
+    Route::post('/pt-requests/{id}/approve', [PtRequestController::class, 'approve'])->name('pt-requests.approve');
+    Route::post('/pt-requests/{id}/reject', [PtRequestController::class, 'reject'])->name('pt-requests.reject');
 
     // ========================================
     // Treatment
@@ -286,6 +309,10 @@ Route::middleware('auth')->group(function () {
     // Audit Logs & Notifications
     Route::resource('audit-logs', AuditLogController::class);
     Route::resource('notifications', NotificationController::class);
+    Route::post('/notifications/{id}/mark-read', [NotificationController::class, 'markAsRead'])->name('notifications.markRead');
+    Route::post('/notifications/mark-all-read', [NotificationController::class, 'markAllAsRead'])->name('notifications.markAllRead');
+    Route::get('/api/notifications/unread-count', [NotificationController::class, 'unreadCount'])->name('api.notifications.unreadCount');
+    Route::get('/api/notifications/recent', [NotificationController::class, 'recent'])->name('api.notifications.recent');
 
     // API endpoints for roles and branches (for dropdowns)
     Route::get('/api/roles', function() {
