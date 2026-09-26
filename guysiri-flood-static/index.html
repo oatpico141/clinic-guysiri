@@ -1,63 +1,109 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="th">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-<title>เช็กน้ำท่วมก่อนมากายสิริ | Guysiri Flood Check</title>
-<meta name="description" content="ตรวจสอบฝน จุดเสี่ยงน้ำท่วม และเส้นทางก่อนเดินทางมากายสิริ คลินิกกายภาพบำบัดทุกสาขา" />
-<style>
-:root{--blue:#1c79d3;--blue2:#0d5fab;--ink:#17334f;--muted:#67809a;--line:#dceaf7;--bg:#f4f9fd;--card:#fff;--ok:#159b67;--warn:#e79b16;--danger:#e65353;--unknown:#7f91a3}
-*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Tahoma,"Noto Sans Thai",sans-serif;background:linear-gradient(180deg,#eaf6ff 0,#f8fbfe 360px);color:var(--ink)}
-a{text-decoration:none;color:inherit}.wrap{max-width:1120px;margin:auto;padding:18px 16px 52px}.hero{background:linear-gradient(135deg,#0d64b4,#2894e7);color:white;border-radius:28px;padding:26px;box-shadow:0 16px 45px rgba(20,107,178,.2);position:relative;overflow:hidden}.hero:after{content:"";position:absolute;width:240px;height:240px;border:32px solid rgba(255,255,255,.09);border-radius:50%;right:-90px;top:-100px}.brand{display:flex;align-items:center;gap:12px;font-weight:800}.logo{width:46px;height:46px;border-radius:14px;background:white;color:var(--blue2);display:grid;place-items:center;font-size:26px;font-weight:900}.hero h1{font-size:clamp(28px,5vw,48px);line-height:1.08;margin:22px 0 10px;max-width:760px}.hero p{margin:0;max-width:760px;line-height:1.7;color:#ecf8ff}.live{display:inline-flex;align-items:center;gap:8px;margin-top:18px;background:rgba(255,255,255,.14);padding:9px 12px;border:1px solid rgba(255,255,255,.23);border-radius:999px;font-size:14px}.dot{width:8px;height:8px;background:#77f2b9;border-radius:50%;box-shadow:0 0 0 5px rgba(119,242,185,.16)}
-.notice{margin:18px 0;background:#fff9df;border:1px solid #f3df88;border-radius:18px;padding:15px 17px;display:flex;gap:11px;line-height:1.55}.notice b{color:#765a00}.topbar{display:flex;gap:10px;align-items:center;justify-content:space-between;margin:26px 0 14px;flex-wrap:wrap}.topbar h2{margin:0;font-size:24px}.refresh{border:0;background:white;color:var(--blue2);padding:11px 15px;border-radius:13px;box-shadow:0 4px 16px rgba(26,87,140,.08);font-weight:700;cursor:pointer}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.card{background:var(--card);border:1px solid #e3eef8;border-radius:22px;padding:18px;box-shadow:0 8px 24px rgba(32,77,115,.06);transition:.2s}.card:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(32,77,115,.1)}.cardhead{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.branch{font-weight:850;font-size:20px}.area{color:var(--muted);font-size:13px;margin-top:4px}.pill{font-weight:800;font-size:12px;padding:7px 10px;border-radius:999px;background:#edf3f8;color:var(--unknown);white-space:nowrap}.pill.ok{background:#e8f8f1;color:var(--ok)}.pill.warn{background:#fff4d9;color:#a76b00}.pill.danger{background:#ffeded;color:var(--danger)}.weather{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:15px 0}.metric{background:#f5f9fc;border-radius:14px;padding:11px 8px;text-align:center}.metric strong{display:block;font-size:18px}.metric span{font-size:11px;color:var(--muted)}.watch{background:#f8fbfe;border-left:4px solid #7dbce9;padding:11px 12px;border-radius:10px;margin:10px 0;font-size:13px;line-height:1.55}.buttons{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}.btn{display:flex;align-items:center;justify-content:center;gap:7px;padding:11px 10px;border-radius:12px;font-size:13px;font-weight:800;border:1px solid #d7e8f6;background:white;color:var(--blue2)}.btn.primary{background:var(--blue);border-color:var(--blue);color:white}.btn.full{grid-column:1/-1}.small{color:var(--muted);font-size:11px;margin-top:10px}.sourcebox{margin-top:28px;background:white;border-radius:22px;padding:20px;border:1px solid #e3eef8}.sourcegrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.source{border:1px solid #e2edf6;border-radius:16px;padding:15px}.source b{display:block;margin-bottom:5px}.source span{color:var(--muted);font-size:13px;line-height:1.5}.source a{display:inline-block;margin-top:9px;color:var(--blue2);font-weight:800;font-size:13px}.staff{margin-top:18px;background:#edf8ff;border:1px dashed #9fcbea;border-radius:18px;padding:16px}.staff h3{margin:0 0 7px}.staff p{margin:0;color:#5c7890;line-height:1.55}.footer{text-align:center;margin-top:30px;color:#7990a5;font-size:12px;line-height:1.7}
-@media(max-width:760px){.wrap{padding:10px 10px 36px}.hero{border-radius:22px;padding:21px}.grid{grid-template-columns:1fr}.sourcegrid{grid-template-columns:1fr}.buttons{grid-template-columns:1fr 1fr}.topbar{margin-top:20px}.weather{gap:6px}.metric strong{font-size:16px}}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b74c9" />
+  <title>GUYSIRI Route Status | เช็กน้ำท่วมก่อนเดินทาง</title>
+  <meta name="description" content="ตรวจสอบฝน จุดเสี่ยงน้ำท่วม และเส้นทางก่อนเดินทางมายังกายสิริ คลินิกกายภาพบำบัดทุกสาขา" />
+  <link rel="preconnect" href="https://unpkg.com" crossorigin>
+  <link rel="preconnect" href="https://tile.openstreetmap.org" crossorigin>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIINfQ3ynFijYndDu9lKB0nlyq7VwN+7O5A=" crossorigin="" />
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-<div class="wrap">
-  <section class="hero">
-    <div class="brand"><div class="logo">ก</div><div>กายสิริ คลินิกกายภาพบำบัด<br><small style="font-weight:500;opacity:.85">GUYSIRI PHYSIOTHERAPY CLINIC</small></div></div>
-    <h1>เช็กน้ำท่วมก่อนเดินทาง<br>มาคลินิกทุกสาขา</h1>
-    <p>ช่วยให้คนไข้และทีมงานตรวจสอบฝน จุดเสี่ยงน้ำท่วม และเส้นทางก่อนออกเดินทาง ข้อมูลฝนอัปเดตอัตโนมัติ ส่วนสถานะน้ำบนถนนให้ยืนยันจากระบบทางการก่อนตัดสินใจเดินทาง</p>
-    <div class="live"><span class="dot"></span><span id="lastUpdate">กำลังอัปเดตข้อมูลสด…</span></div>
-  </section>
-
-  <div class="notice"><div>⚠️</div><div><b>สำคัญ:</b> “ฝนตก” ไม่ได้แปลว่า “น้ำท่วม” หน้าเว็บจะแยกข้อมูลฝนออกจากข้อมูลน้ำท่วมบนถนน เพื่อไม่ให้คนไข้เข้าใจผิด หากมีฝนหนักให้กด <b>เช็กน้ำท่วมทางการ</b> ก่อนเดินทาง</div></div>
-
-  <div class="topbar"><h2>สถานะรอบสาขา</h2><button class="refresh" onclick="loadAll()">↻ รีเฟรชข้อมูล</button></div>
-  <div id="grid" class="grid"></div>
-
-  <section class="sourcebox">
-    <h2 style="margin-top:0">แหล่งตรวจสอบก่อนเดินทาง</h2>
-    <div class="sourcegrid">
-      <div class="source"><b>🌊 กทม. ระบบตรวจวัดน้ำท่วมถนน</b><span>เซนเซอร์ระดับน้ำบนถนนในกรุงเทพฯ เหมาะกับสาขาบางนา บางแค และวัชรพล</span><a href="https://floodbangkok.bangkok.go.th/" target="_blank" rel="noopener">เปิดระบบ กทม. →</a></div>
-      <div class="source"><b>🛰️ GISTDA Disaster Platform</b><span>ดูภาพรวมพื้นที่น้ำท่วมจากข้อมูลดาวเทียมทั่วประเทศ เหมาะกับสาขาปทุมธานีและศาลายา</span><a href="https://disaster.gistda.or.th/" target="_blank" rel="noopener">เปิดแผนที่ GISTDA →</a></div>
-      <div class="source"><b>🌧️ ThaiWater / เรดาร์ฝน</b><span>เช็กกลุ่มฝนและสถานการณ์น้ำประกอบการเดินทาง โดยเฉพาะช่วงฝนตกหนักต่อเนื่อง</span><a href="https://pwrc.thaiwater.net/radar" target="_blank" rel="noopener">เปิดเรดาร์ฝน →</a></div>
-    </div>
-    <div class="staff"><h3>สำหรับแอดมินกายสิริ</h3><p>เวลาคนไข้โทรถามเส้นทาง ให้เลือกสาขาด้านบน → ดูฝนรอบสาขา → กดเช็กน้ำท่วมทางการ → เปิดเส้นทางบน Maps แล้วแจ้งคนไข้ว่าควรใช้เส้นไหนหรือควรเผื่อเวลาเดินทาง</p></div>
-  </section>
-  <div class="footer">กายสิริ คลินิกกายภาพบำบัด • โทร 02-124-4666<br>ข้อมูลสภาพอากาศเป็นข้อมูลประกอบการเดินทาง โปรดตรวจสอบสภาพถนนจริงและประกาศจากหน่วยงานทางการอีกครั้ง</div>
-</div>
-<script>
-const branches=[
- {id:'maruay1',name:'มารวย 1',area:'หทัยราษฎร์ / ตลาดมารวย',lat:13.9496,lon:100.6905,bma:false,watch:'หทัยราษฎร์ • ถนนเชื่อมลำลูกกา • จุดต่ำหน้าตลาด',maps:'กายสิริ คลินิกกายภาพบำบัด ตลาดมารวย'},
- {id:'maruay2',name:'มารวย 2',area:'หทัยราษฎร์ / ตลาดมารวย',lat:13.9496,lon:100.6905,bma:false,watch:'หทัยราษฎร์ • ถนนเชื่อมลำลูกกา • จุดต่ำหน้าตลาด',maps:'กายสิริ คลินิกกายภาพบำบัด ตลาดมารวย'},
- {id:'watcharaphon',name:'วัชรพล',area:'วัชรพล / สายไหม',lat:13.8758,lon:100.6412,bma:true,watch:'ถนนวัชรพล • สายไหม • สุขาภิบาล 5',maps:'กายสิริ คลินิกกายภาพบำบัด วัชรพล'},
- {id:'salaya',name:'ศาลายา',area:'พุทธมณฑลสาย 4 / ศาลายา',lat:13.8016,lon:100.3236,bma:false,watch:'พุทธมณฑลสาย 4 • ศาลายา • ถนนบรมราชชนนี',maps:'กายสิริ คลินิกกายภาพบำบัด ศาลายา'},
- {id:'bangna',name:'บางนา',area:'ลาซาล / บางนา',lat:13.6608,lon:100.6358,bma:true,watch:'แบริ่งตัดใหม่–ลาซาล • ศรีนครินทร์ • บางนา-ตราด',maps:'กายสิริ คลินิกกายภาพบำบัด บางนา ลาซาล'},
- {id:'bangkae',name:'บางแค',area:'บางแค / กัลปพฤกษ์',lat:13.7055,lon:100.3978,bma:true,watch:'เพชรเกษม • กัลปพฤกษ์ • ราชพฤกษ์',maps:'กายสิริ คลินิกกายภาพบำบัด บางแค'},
- {id:'lamlukka1',name:'ลำลูกกา 1',area:'ลำลูกกา ปทุมธานี',lat:13.9328,lon:100.7472,bma:false,watch:'ลำลูกกา • ไสวประชาราษฎร์ • ถนนเชื่อมคลองต่าง ๆ',maps:'กายสิริ คลินิกกายภาพบำบัด ลำลูกกา'},
- {id:'lamlukka2',name:'ลำลูกกา 2',area:'ลำลูกกา ปทุมธานี',lat:13.9750,lon:100.7800,bma:false,watch:'ลำลูกกา • ไสวประชาราษฎร์ • ถนนเชื่อมคลองต่าง ๆ',maps:'กายสิริ คลินิกกายภาพบำบัด ลำลูกกา'}
-];
-function esc(s){return encodeURIComponent(s)}
-function codeText(c){if([95,96,99].includes(c))return'พายุ';if([80,81,82].includes(c))return'ฝน';if([61,63,65].includes(c))return'ฝน';if([51,53,55].includes(c))return'ฝนปรอย';if([1,2,3].includes(c))return'มีเมฆ';if(c===0)return'ท้องฟ้าโปร่ง';return'ตรวจสอบ'}
-function riskLabel(p,r,code){if(r>=8||p>=80||[95,96,99].includes(code))return['เฝ้าระวังสูง','danger'];if(r>=2||p>=55||[80,81,82,61,63,65].includes(code))return['เฝ้าระวัง','warn'];return['ฝนต่ำ/ปกติ','ok']}
-function officialLink(b){return b.bma?'https://floodbangkok.bangkok.go.th/':'https://disaster.gistda.or.th/'}
-function routeLink(b){return 'https://www.google.com/maps/search/?api=1&query='+esc(b.maps)}
-function skeleton(b){return `<article class="card" id="${b.id}"><div class="cardhead"><div><div class="branch">สาขา${b.name}</div><div class="area">${b.area}</div></div><span class="pill">กำลังเช็ก…</span></div><div class="weather"><div class="metric"><strong>–</strong><span>ฝนขณะนี้</span></div><div class="metric"><strong>–</strong><span>โอกาสฝน</span></div><div class="metric"><strong>–</strong><span>สภาพอากาศ</span></div></div><div class="watch"><b>จุดเฝ้าระวัง:</b> ${b.watch}</div><div class="buttons"><a class="btn primary" target="_blank" rel="noopener" href="${officialLink(b)}">🌊 เช็กน้ำท่วมทางการ</a><a class="btn" target="_blank" rel="noopener" href="${routeLink(b)}">🗺️ เปิดเส้นทาง</a><a class="btn full" href="tel:021244666">☎️ โทรคลินิก 02-124-4666</a></div><div class="small">${b.bma?'พื้นที่นี้ตรวจสอบเซนเซอร์ถนน กทม. ได้':'อยู่นอกพื้นที่เซนเซอร์ถนน กทม. ให้ดู GISTDA + ฝน + สภาพเส้นทางประกอบ'}</div></article>`}
-async function updateBranch(b){const el=document.getElementById(b.id);try{const url=`https://api.open-meteo.com/v1/forecast?latitude=${b.lat}&longitude=${b.lon}&current=precipitation,rain,showers,weather_code&hourly=precipitation_probability&timezone=Asia%2FBangkok&forecast_days=1`;const d=await fetch(url,{cache:'no-store'}).then(r=>r.json());const c=d.current||{};const rain=Number(c.precipitation||0);const hour=(c.time||'').slice(0,13)+':00';let idx=(d.hourly?.time||[]).findIndex(t=>t===hour);if(idx<0)idx=0;const prob=Number(d.hourly?.precipitation_probability?.[idx]||0);const [label,cls]=riskLabel(prob,rain,c.weather_code);el.querySelector('.pill').className='pill '+cls;el.querySelector('.pill').textContent=label;const vals=el.querySelectorAll('.metric strong');vals[0].textContent=rain.toFixed(1)+' มม.';vals[1].textContent=prob+'%';vals[2].textContent=codeText(c.weather_code);}
-catch(e){el.querySelector('.pill').textContent='ข้อมูลฝนไม่พร้อม';}}
-async function loadAll(){document.getElementById('grid').innerHTML=branches.map(skeleton).join('');await Promise.all(branches.map(updateBranch));document.getElementById('lastUpdate').textContent='อัปเดตล่าสุด '+new Intl.DateTimeFormat('th-TH',{dateStyle:'medium',timeStyle:'short',timeZone:'Asia/Bangkok'}).format(new Date())+' • รีเฟรชอัตโนมัติทุก 5 นาที'}
-loadAll();setInterval(loadAll,300000);
-</script>
-</body></html>
+  <div class="site-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="GUYSIRI Route Status">
+        <span class="brand-mark">G</span>
+        <span class="brand-copy"><strong>GUYSIRI</strong><small>Route Status</small></span>
+      </a>
+      <div class="mode-switch" aria-label="เลือกโหมดการใช้งาน">
+        <button class="mode-btn active" data-mode="patient">คนไข้</button>
+        <button class="mode-btn" data-mode="admin">แอดมิน</button>
+      </div>
+      <button class="icon-btn" id="refreshBtn" title="รีเฟรชข้อมูล" aria-label="รีเฟรชข้อมูล">↻</button>
+    </header>
+    <main>
+      <section class="hero panel">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="live-dot"></span> อัปเดตข้อมูลอัตโนมัติ</div>
+          <h1>เช็กเส้นทางก่อนมา<br><span>กายสิริ</span></h1>
+          <p>ดูฝนรอบสาขา จุดเฝ้าระวัง และแหล่งตรวจสอบน้ำท่วมทางการก่อนออกเดินทาง โดยแยก “ฝน” ออกจาก “น้ำท่วม” ชัดเจน เพื่อไม่ให้เข้าใจผิด</p>
+          <div class="hero-actions"><a class="btn primary" href="#branch-picker">เลือกสาขาที่จะไป</a><a class="btn ghost" href="tel:021244666">โทร 02-124-4666</a></div>
+          <div class="updated" id="updatedText">กำลังโหลดข้อมูล…</div>
+        </div>
+        <div class="hero-status" id="heroStatus">
+          <div class="status-orb loading"><span>…</span></div>
+          <div><small>ภาพรวมขณะนี้</small><strong>กำลังประเมินฝนทุกสาขา</strong><span>ข้อมูลน้ำบนถนนตรวจสอบจากหน่วยงานทางการแยกต่างหาก</span></div>
+        </div>
+      </section>
+      <section class="summary-grid" aria-label="สรุปสถานะ">
+        <article class="summary-card"><span class="summary-icon">🏥</span><div><strong id="sumBranches">8</strong><span>สาขาทั้งหมด</span></div></article>
+        <article class="summary-card"><span class="summary-icon">🌧️</span><div><strong id="sumRainRisk">–</strong><span>สาขาฝนเฝ้าระวัง</span></div></article>
+        <article class="summary-card"><span class="summary-icon">🌊</span><div><strong id="sumBma">–</strong><span>จุดน้ำท่วม กทม.</span></div></article>
+        <article class="summary-card"><span class="summary-icon">⚡</span><div><strong id="sumDataHealth">–</strong><span>ข้อมูลออนไลน์</span></div></article>
+      </section>
+      <section class="official-strip" id="officialStrip">
+        <div><b>สถานะระบบตรวจวัดน้ำท่วมถนน กทม.</b><span id="bmaText">กำลังตรวจสอบข้อมูลทางการ…</span></div>
+        <a href="https://floodbangkok.bangkok.go.th/" target="_blank" rel="noopener">เปิดระบบ กทม. ↗</a>
+      </section>
+      <section id="patientView">
+        <div class="section-head" id="branch-picker">
+          <div><span class="kicker">สำหรับคนไข้</span><h2>เลือกสาขาที่จะเดินทางไป</h2></div>
+          <div class="select-wrap"><select id="branchSelect" aria-label="เลือกสาขา"></select></div>
+        </div>
+        <section class="focus-grid">
+          <article class="branch-focus panel" id="branchFocus"></article>
+          <aside class="rain-panel panel">
+            <div class="panel-head"><div><span class="kicker">ฝนรอบสาขา</span><h3>4 ชั่วโมงข้างหน้า</h3></div><span class="data-tag">Open-Meteo</span></div>
+            <div class="hourly" id="hourlyForecast"></div>
+            <div class="note soft">พยากรณ์ฝนใช้เพื่อประกอบการเดินทางเท่านั้น ไม่ใช่การยืนยันว่าถนนน้ำท่วมหรือไม่</div>
+          </aside>
+        </section>
+        <section class="map-section panel">
+          <div class="panel-head"><div><span class="kicker">ภาพรวมสาขา</span><h3>แผนที่กายสิริทุกสาขา</h3></div><span class="legend-inline"><i class="dot low"></i>ฝนต่ำ <i class="dot mid"></i>เฝ้าระวัง <i class="dot high"></i>สูง</span></div>
+          <div id="map"><div class="map-fallback">กำลังโหลดแผนที่…</div></div>
+        </section>
+        <section class="section-block">
+          <div class="section-head"><div><span class="kicker">ทุกสาขา</span><h2>สถานะฝนรอบคลินิก</h2></div><button class="text-btn" id="sortRiskBtn">เรียงตามความเสี่ยง</button></div>
+          <div class="branch-grid" id="branchCards"></div>
+        </section>
+      </section>
+      <section id="adminView" hidden>
+        <div class="section-head">
+          <div><span class="kicker">สำหรับแอดมิน</span><h2>Operations Dashboard</h2></div>
+          <div class="admin-actions"><button class="btn compact" id="copyAllBtn">คัดลอกสรุปทุกสาขา</button><a class="btn compact ghost-dark" href="https://floodbangkok.bangkok.go.th/" target="_blank" rel="noopener">เปิด กทม.</a><a class="btn compact ghost-dark" href="https://disaster.gistda.or.th/" target="_blank" rel="noopener">เปิด GISTDA</a></div>
+        </div>
+        <div class="admin-kpis">
+          <div class="admin-kpi"><small>ฝนเฝ้าระวังสูง</small><strong id="adminHigh">–</strong><span>สาขา</span></div>
+          <div class="admin-kpi"><small>มีฝนขณะนี้</small><strong id="adminRaining">–</strong><span>สาขา</span></div>
+          <div class="admin-kpi"><small>ข้อมูลอากาศสำเร็จ</small><strong id="adminWeatherOk">–</strong><span>/ 8</span></div>
+          <div class="admin-kpi"><small>BMA API</small><strong id="adminBmaState">–</strong><span>สถานะ</span></div>
+        </div>
+        <section class="admin-table panel">
+          <div class="table-toolbar"><input id="adminSearch" type="search" placeholder="ค้นหาสาขา / เขต / เส้นทาง…" /><select id="adminFilter"><option value="all">ทุกสถานะ</option><option value="high">เฝ้าระวังสูง</option><option value="mid">เฝ้าระวัง</option><option value="low">ฝนต่ำ</option></select></div>
+          <div class="table-scroll"><table><thead><tr><th>สาขา</th><th>ฝนตอนนี้</th><th>โอกาสฝน</th><th>4 ชม.สูงสุด</th><th>ระดับเฝ้าระวัง</th><th>จุดเสี่ยง</th><th>เครื่องมือ</th></tr></thead><tbody id="adminRows"></tbody></table></div>
+        </section>
+        <section class="admin-help panel">
+          <div><span class="kicker">สคริปต์ตอบคนไข้</span><h3>ตอบให้ตรงและไม่ฟันธงเกินข้อมูล</h3><p>ระบบนี้จะแยก “ข้อมูลฝนสด” กับ “ข้อมูลน้ำบนถนน” ชัดเจน แอดมินควรเปิดแหล่งทางการก่อนยืนยันเส้นทาง โดยเฉพาะช่วงฝนหนัก</p></div>
+          <div class="script-box">“ตอนนี้บริเวณสาขา <b>[ชื่อสาขา]</b> มีฝน <b>[ระดับ]</b> ค่ะ ทางคลินิกแนะนำให้เช็กสภาพน้ำบนถนนจากระบบทางการก่อนออกเดินทาง และเผื่อเวลาเพิ่มเล็กน้อย หากต้องการทางแอดมินช่วยดูเส้นทางให้ได้ค่ะ”</div>
+        </section>
+      </section>
+      <section class="sources panel">
+        <div class="section-head source-head"><div><span class="kicker">แหล่งข้อมูล</span><h2>ข้อมูลที่เว็บใช้อ้างอิง</h2></div></div>
+        <div class="source-grid">
+          <a class="source-card" href="https://floodbangkok.bangkok.go.th/" target="_blank" rel="noopener"><span>01</span><div><b>ระบบตรวจวัดน้ำท่วมถนน กทม.</b><small>เซนเซอร์ระดับน้ำบนถนนและอุโมงค์ในกรุงเทพฯ</small></div><em>เปิด ↗</em></a>
+          <a class="source-card" href="https://disaster.gistda.or.th/" target="_blank" rel="noopener"><span>02</span><div><b>GISTDA Disaster Platform</b><small>ภาพรวมพื้นที่น้ำท่วมจากข้อมูลดาวเทียมและข้อมูลภัยพิบัติ</small></div><em>เปิด ↗</em></a>
+          <a class="source-card" href="https://pwrc.thaiwater.net/radar" target="_blank" rel="noopener"><span>03</span><div><b>ThaiWater / Radar</b><small>ใช้ดูทิศทางกลุ่มฝนประกอบก่อนเดินทาง</small></div><em>เปิด ↗</em></a>
+        </div>
+        <div class="threshold-note"><b>เกณฑ์อ้างอิงจากระบบ กทม.</b> ระบบทางการแสดงระดับ “น้ำท่วมขังเล็กน้อย” ที่ประมาณ 5 ซม. และ “น้ำท่วม” ที่ประมาณ 10 ซม. เว็บ GUYSIRI ไม่สร้างค่าระดับน้ำเอง และจะไม่ใช้ข้อมูลฝนแทนข้อมูลน้ำบนถนน</div>
+      </section>
+    </main>
+    <footer><div><b>GUYSIRI Physiotherapy Clinic</b><span>อยากมีกายที่ดี ต้องกายสิริ</span></div><div><a href="tel:021244666">02-124-4666</a><span>•</span><span>ข้อมูลเพื่อช่วยวางแผนการเดินทาง</span></div></footer>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="./app.js"></script>
+</body>
+</html>
